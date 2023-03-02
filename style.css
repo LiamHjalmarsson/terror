@@ -10,12 +10,13 @@
 
     --border-width: 3px;
     --widthVW: 80vw;
-    --heightHalf: 50vh;
+    --heightHalf: 35vh;
     --maxWidth: 800px;
 }
 
 *{
     padding: 0;
+    margin: 0;
     font-family: 'Noto Sans';
 }
 
@@ -28,9 +29,16 @@ body {
     overflow: hidden;
 }
 
+.terroHeader {
+    color: var(--gradietsTwo);
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+
 #container {
     width: var(--widthVW);
-    height: 40vh;
+    height: var(--heightHalf);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,7 +194,7 @@ main > div {
 }
 
 #response {
-    height: var(--heightHalf);
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;

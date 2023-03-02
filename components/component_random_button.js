@@ -56,7 +56,6 @@ async function terror () {
         });
 
     } catch (error) {
-        // console.log("error", error)
     }
 }
 
@@ -70,7 +69,6 @@ function randomInTerror ( students ) {
         localStorageName = "";
     }
 
-    console.log(localStorageName)
     students.forEach(person => {
 
         if (person.name != localStorageName) {
@@ -80,21 +78,21 @@ function randomInTerror ( students ) {
         }
     })
 
-        
-        shuffle();
-        
-        const randomIndex = Math.floor(Math.random() * array.length);
-        const randomName = array[randomIndex];
-        
-        PubSub.publish({
-            event: "randomName",
-            detail: { params: { 
-                    person: randomName, 
-                    students: students,
-                }
+    shuffle();
+    
+    const randomIndex = Math.floor(Math.random() * array.length);
+    const randomName = array[randomIndex];
+    
+    console.log(array)
+    
+    PubSub.publish({
+        event: "randomName",
+        detail: { params: { 
+                person: randomName, 
+                students: students,
             }
-        });
-
+        }
+    });
 
     function shuffle () {
         for (let i = array.length - 1; i > 0; i--) {

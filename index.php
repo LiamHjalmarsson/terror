@@ -11,7 +11,9 @@
     <title>Terror</title>
 </head>
 <body>
-    
+
+    <header> <h2 class="terroHeader"> Terror </h2></header>
+
     <div id="container"></div>
 
     <main></main>

@@ -2,41 +2,46 @@
     {
         "id": 1,
         "name": "liam",
-        "terror": 1
+        "terror": 6
     },
     {
         "id": 2,
         "name": "matilda",
-        "terror": 1
+        "terror": 6
     },
     {
         "id": 3,
         "name": "caspian",
-        "terror": 1
+        "terror": 5
     },
     {
         "id": 4,
         "name": "anna",
-        "terror": 1
+        "terror": 6
     },
     {
         "id": 5,
         "name": "alexander",
-        "terror": 1
+        "terror": 5
     },
     {
         "id": 6,
         "name": "mehmet",
-        "terror": 1
+        "terror": 4
     },
     {
         "id": 7,
         "name": "my",
-        "terror": 0
+        "terror": 4
     },
     {
         "id": 8,
         "name": "melinda",
+        "terror": 4
+    },
+    {
+        "id": 9,
+        "name": "sss",
         "terror": 1
     }
 ]
