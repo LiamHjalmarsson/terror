@@ -1,0 +1,307 @@
+:root {
+    --text: #4d4843;
+    --textColored: #E85A4F;
+    --inputUnactive:  #b6b5b1;
+    --gradietOne:  #E98074;
+    --gradietsTwo:  #E85A4F;
+    --gradietsThree:  #faa629;
+    --gradietsFour:  #f3c42b;
+    --added: #96e067;
+
+    --border-width: 3px;
+    --widthVW: 80vw;
+    --heightHalf: 50vh;
+    --maxWidth: 800px;
+}
+
+*{
+    padding: 0;
+    font-family: 'Noto Sans';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #4d4843 20%, #55524d); 
+    overflow: hidden;
+}
+
+#container {
+    width: var(--widthVW);
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--widthVW);
+    height: 50%;
+    max-width: var(--maxWidth);
+    color: var(--textColored);
+    background: var(--text);
+    border-radius: var(--border-width);
+}
+
+.box::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+        60deg,
+        var(--gradietOne),
+        var(--gradietsTwo),
+        var(--gradietsThree)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 3s alternate infinite;
+    filter: blur(10px);
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 15px;
+    width: var(--widthVW);
+    height: 75px;
+    max-width: var(--maxWidth);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+form > div {
+    position: relative;
+    padding: 10px 0 0;
+    width: 100%;
+}
+
+form > div > input {
+    width: 90%;
+    border: 0;
+    border-bottom: 2px solid var(--gradietOne);
+    outline: 0;
+    color: var(--inputUnactive);
+    padding: 10px 0 5px 0;
+    margin-top: 5px;
+    background: transparent;
+    transition: border-bottom 0.3s;
+} 
+
+form > div > input::placeholder{
+    color: transparent;
+}
+
+form > div > input:placeholder-shown ~ label {
+    font-size: 20px;
+    cursor: text;
+    top: 20px;
+    left: 10px;
+    color: var(--textColored);
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    display: block;
+    transition: 0.5s;
+    font-size: 20px;
+    color: var(--inputUnactive);
+}
+
+input:focus {
+    border-bottom: 2px solid var(--gradietsTwo);
+    padding-bottom: 5px;  
+}
+
+form > button, .terror, .doneButton  {
+    border: none;
+    background-image: linear-gradient(to right, var(--gradietOne) 0%, var(--gradietsTwo) 100%);
+    border-radius: var(--border-width);
+    box-sizing: border-box;
+    color: var(--textColored);
+    display: block;
+    height: 50px;
+    font-size: 20px;
+    padding: 3px;
+    position: relative;
+    text-decoration: none;
+    width: 40%;
+    transition: color 0.4s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 0 5px 5px #e40a0a1a;
+}
+
+button:hover {
+    color: var(--text);
+}
+
+button > span, .terror > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: #424244;
+    border-radius: var(--border-width);
+    transition: background 0.5s ease-in-out;
+}
+
+span:hover{
+    background: transparent;
+}
+
+.terror {
+    width: var(--widthVW);
+    max-width: var(--maxWidth);
+}
+
+main > div {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#response {
+    height: var(--heightHalf);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    font-size: 9px;
+    color: var(--textColored);
+}
+
+.added {
+    font-size: 12px;
+    color: var(--gradietOne);
+}
+
+.transitonLoading {
+    display: flex;
+}
+
+.transitonLoading > span {
+    position: relative;
+    top: 0.63em;
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: rotateX(-90deg);
+}
+
+.let_1 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.1s;
+}
+
+.let_2 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+.let_3 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+.let_4 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.4s;
+}
+
+.let_5 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.let_6 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+
+.let_7 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.7s;
+}
+
+.let_8 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+.let_9 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 0.9s;
+}
+
+.let_10 {
+    animation: letterDrop 1s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.let_11 {
+    animation: drop 1s ease-in-out infinite;
+    animation-delay: 1.1s;
+}
+
+.let_12 {
+    animation: drop 1s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+
+.let_13 {
+    animation: drop 1s ease-in-out infinite;
+    animation-delay: 1.3s;
+}
+
+.let_14 {
+    animation: drop 1s ease-in-out infinite;
+    animation-delay: 1.4s;
+}
+
+@keyframes letterDrop {
+    10% {
+        opacity: 0.5;
+    }
+    20% {
+        opacity: 1;
+        top: 1.78em;
+        transform: rotateX(-360deg);
+    }
+    80% {
+        opacity: 1;
+        top: 1.78em;
+        transform: rotateX(-360deg);
+    }
+    100% {
+        opacity: 1;
+        top: 1.78em;
+        transform: rotateX(-360deg);
+    }
+}
